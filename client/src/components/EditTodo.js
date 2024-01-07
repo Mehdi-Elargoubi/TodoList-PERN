@@ -1,10 +1,9 @@
 import { Fragment, useState } from "react";
 
-
 const EditTodo = ({todo}) =>{
     const [description, setDescription] = useState(todo.description);
     
-    // Edit function
+    //Edit function
     const updateDescription = async e => {
         e.preventDefault();
         try {
@@ -15,7 +14,6 @@ const EditTodo = ({todo}) =>{
                 body : JSON.stringify(body)
             });
 
-            
             window.location = "/";
             //console.log(response);
         } catch (error) {

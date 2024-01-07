@@ -22,8 +22,7 @@ const InputTodo = () => {
     
     return (
         <Fragment>
-            <h1 className="text-center mt-5 ">PERN Todo List</h1>
-
+            <h1 style={{ fontWeight: 'bold', textDecoration: 'underline', fontFamily: 'Times New Roman' }} className="text-center mt-5">PERN Todo List</h1>
             <form className="d-flex mt-5"  onSubmit={onSubmit}>
                 <input type="text" className="form-control me-2" value={description} 
                 onChange={ e => 
@@ -31,9 +30,7 @@ const InputTodo = () => {
                  }/>
                 <button className="btn btn-success" >Add</button>
             </form>
-
         </Fragment>
-
     );
 }
 

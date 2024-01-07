@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import EditTodo from './EditTodo';
 
-
 const ListTodos = () => {
     const [todos, setTodos] = useState([]);
 
@@ -18,7 +17,6 @@ const ListTodos = () => {
             console.error(error.message);
         }
     }
-
 
     // Get All Todos
     const GetTodos = async () =>{
@@ -38,8 +36,8 @@ const ListTodos = () => {
 
     return (
         <Fragment>
-            <h1>List Todos</h1>
-                <table className="table  mt-5 text-center table-striped table-hover">
+            <h4 style={{ marginTop: '20px', fontWeight: '300', fontStyle: 'italic', textDecoration: 'underline', fontFamily: 'Verdana, sans-serif' }}>List Todos</h4>
+                <table className="table  mt-3 text-center table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">Description</th>
@@ -48,15 +46,14 @@ const ListTodos = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        
                         {todos.map((todo)=>(
-                        <tr key={todo.todo_id}>
-                            <td>{todo.description}</td>
-                            <td>
-                                <EditTodo todo={todo}/>
-                            </td>
-                            <td><button className="btn btn-danger" onClick={() => deleteTodo(todo.todo_id)}>Delete</button></td>
-                        </tr>
+                            <tr key={todo.todo_id}>
+                                <td>{todo.description}</td>
+                                <td>
+                                    <EditTodo todo={todo}/>
+                                </td>
+                                <td><button className="btn btn-danger" onClick={() => deleteTodo(todo.todo_id)}>Delete</button></td>
+                            </tr>
                         ))}
                     </tbody>
                 </table>
