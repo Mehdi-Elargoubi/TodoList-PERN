@@ -4,7 +4,7 @@ const InputTodo = () => {
 
     const [description,setDescription] = useState("");
 
-    const onSubmit = async e => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         try {
             const body = {description};
